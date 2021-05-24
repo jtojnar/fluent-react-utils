@@ -19,5 +19,5 @@ export const Loc = {
 };
 
 export function augmentLoc(customElements) {
-  return Object.assign({}, Loc, customElements);
+  return { ...Loc, ...customElements };
 }

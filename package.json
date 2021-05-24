@@ -1,10 +1,8 @@
 {
   "name": "fluent-react-utils",
-  "version": "0.1.0",
+  "version": "0.1.2",
+  "private": true,
   "description": "Utilities for fluent-react",
-  "scripts": {
-    "build": "lerna bootstrap"
-  },
   "keywords": [
     "udacity",
     "fluent",
@@ -24,5 +22,10 @@
     "url": "https://github.com/udacity/fluent-react-utils"
   },
   "license": "Apache-2.0",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "dependencies": {}
 }

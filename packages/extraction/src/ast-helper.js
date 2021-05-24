@@ -42,11 +42,11 @@ export function getLocalizationKey(localizedNode = {}, identifier = 'id') {
 }
 
 export function findChildNode(localizedNode = {}) {
-  return localizedNode.children.find(child => child.type === JSXElement);
+  return localizedNode.children.find((child) => child.type === JSXElement);
 }
 
 export function getExpressionNodes(children = []) {
-  return children.filter(child => child.type === JSXExpressionContainer);
+  return children.filter((child) => child.type === JSXExpressionContainer);
 }
 
 export function isNonEmptyText(node) {
@@ -59,36 +59,36 @@ export function getLiteralNodes(children = []) {
 
 export function getComments(node = {}) {
   const expressionNodes = getExpressionNodes(node.children);
-  const commentNodes = expressionNodes.filter(n => n.expression.type === JSXEmptyExpression);
-  return commentNodes.map(n => n.expression.innerComments[0].value.trim());
+  const commentNodes = expressionNodes.filter((n) => n.expression.type === JSXEmptyExpression);
+  return commentNodes.map((n) => n.expression.innerComments[0].value.trim());
 }
 
 export function getMessages(node) {
   const literalNodes = getLiteralNodes(node.children);
   if (literalNodes.length) {
-    return literalNodes.map(literalNode => literalNode.value);
+    return literalNodes.map((literalNode) => literalNode.value);
   }
   const expressionNodes = getExpressionNodes(node.children);
-  const stringNodes = expressionNodes.filter(n => n.expression.type === StringLiteral);
-  return stringNodes.map(stringNode => stringNode.expression.value);
+  const stringNodes = expressionNodes.filter((n) => n.expression.type === StringLiteral);
+  return stringNodes.map((stringNode) => stringNode.expression.value);
 }
 
 export function getAttributesList(node) {
   const attributes = getProp(node.openingElement.attributes, attrs);
   const l10nAttrs = attributes.value.expression.properties;
   if (l10nAttrs) {
-    return l10nAttrs.map(attr => attr.key.name);
+    return l10nAttrs.map((attr) => attr.key.name);
   }
   return [];
 }
 
 export function getAllowedAttrs(elementType, customElements = {}, messages) {
   const elemName = elementType.split('.')[1];
-  const elements = Object.assign({}, STANDARD_ELEMENT_TYPES, customElements);
+  const elements = { ...STANDARD_ELEMENT_TYPES, ...customElements };
   const elementAttrs = elements[elemName];
   if (elementAttrs) {
     const attributeNames = Object.keys(elementAttrs);
-    return attributeNames.map(name => (elementAttrs[name] ? name : ''));
+    return attributeNames.map((name) => (elementAttrs[name] ? name : ''));
   }
 
   if (!messages || messages.length === 0) {

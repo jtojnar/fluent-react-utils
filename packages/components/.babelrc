@@ -1,18 +1,3 @@
 {
-  "env": {
-    "development": {
-      "presets": ["env", "react", "es2015"],
-      "plugins": [
-        "add-module-exports",
-        "transform-object-rest-spread"
-      ]
-    },
-    "production": {
-      "presets": ["env", "react", "es2015", "minify"],
-      "plugins": [
-        "add-module-exports",
-        "transform-object-rest-spread"
-      ]
-    }
-  }
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
 }

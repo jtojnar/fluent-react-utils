@@ -1,5 +1,5 @@
 import React from 'react';
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import { assert, expect } from 'chai';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -52,10 +52,10 @@ describe('makeLocalizedElement', () => {
 
   it('Spreads in the l10nJsx', () => {
     const Component = makeLocalizedElement('h1');
-    const l10nJsx = { link: <a href="https://example.com" /> };
+    const l10nJsx = { link: <a href="https://example.com">Label</a> };
     const wrapper = shallow(<Component l10nId="test" l10nJsx={l10nJsx} />);
     const expectedOutput = (
-      <Localized id="test" link={<a href="https://example.com" />}>
+      <Localized id="test" link={<a href="https://example.com">Label</a>}>
         <h1 />
       </Localized>
     );

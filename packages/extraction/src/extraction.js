@@ -27,7 +27,7 @@ export function parseForFtl(code, opts) {
 export function getSourceStrings({ filePattern, shorthandName, customElements }) {
   return glob
     .sync(filePattern)
-    .map(filename => fs.readFileSync(filename, 'utf8'))
-    .map(file => parseForFtl(file, { shorthandName, customElements }))
+    .map((filename) => fs.readFileSync(filename, 'utf8'))
+    .map((file) => parseForFtl(file, { shorthandName, customElements }))
     .reduce((collection, messages) => collection + messages, '');
 }

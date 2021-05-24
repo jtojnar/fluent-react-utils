@@ -7,4 +7,3 @@ describe('pseudolocalize', () => {
     assert(pseudolocalize('Python') === expectedOutput);
   });
 });
-

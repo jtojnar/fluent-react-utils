@@ -1,4 +1,4 @@
-import { parse, serialize, FluentSerializer } from 'fluent-syntax';
+import { parse, serialize, FluentSerializer } from '@fluent/syntax';
 
 export function getAttributeName(attribute = {}) {
   if (attribute.name) {
@@ -23,7 +23,7 @@ export function pullLocalizedDOMAttributes(node, l10nAttrsList) {
     return '';
   }
   const { attributes } = node.openingElement;
-  const l10nAttributes = attributes.filter(att => l10nAttrsList.includes(getAttributeName(att)));
+  const l10nAttributes = attributes.filter((att) => l10nAttrsList.includes(getAttributeName(att)));
   return l10nAttributes.reduce((ftlRules, attribute) => {
     const propName = getAttributeName(attribute);
     const message = getAttributeValue(attribute);
