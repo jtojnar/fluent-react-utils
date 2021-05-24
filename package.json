@@ -1,6 +1,6 @@
 {
-  "name": "fluent-react-utils",
-  "version": "0.1.2",
+  "name": "@doctype/fluent-react-utils",
+  "version": "0.1.3",
   "private": true,
   "description": "Utilities for fluent-react",
   "keywords": [
@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/udacity/fluent-react-utils"
+    "url": "https://github.com/doctype/fluent-react-utils"
   },
   "license": "Apache-2.0",
   "workspaces": {

@@ -5,7 +5,7 @@ Get default messages from your source code so that you don't have to switch
 context to manage translatable messages
 
 ```
-npm install -D fluent-react-extract
+yarn add -D @doctype/fluent-react-extract
 ```
 
 Uses the [fluent-syntax](https://github.com/projectfluent/fluent.js/tree/master/fluent-syntax) serializer
@@ -90,7 +90,7 @@ It is recommended that this record of custom element attributes is held in a jso
 file that is pulled into any file defining the `attrs` of that element in the React
 code.
 ```js
-import {augmentLoc, makeLocalizedElement} from 'fluent-react-components';
+import {augmentLoc, makeLocalizedElement} from '@doctype/fluent-react-components';
 import customAttrs from './custom-elements.json';
 
 const customElements = {
@@ -116,7 +116,7 @@ as this library's `Loc` utility, you can update this in the `.l10nrc` file.
 
 ```js
 // my-utils
-import {augmentLoc, makeLocalizedElement} from 'fluent-react-components';
+import {augmentLoc, makeLocalizedElement} from '@doctype/fluent-react-components';
 import customAttrs from './custom-elements.json';
 
 const customElements = {

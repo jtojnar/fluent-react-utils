@@ -1,5 +1,5 @@
 import React from 'react';
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import { Link } from 'react-router';
 import { signOut } from 'utils';
 import warningImg from 'assets/images';

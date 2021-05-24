@@ -1,10 +1,10 @@
 # Fluent React Components
 
 ```
-npm install fluent-react-components
+yarn add @doctype/fluent-react-components
 ```
 
-Basic fluent-react makes use of `Localized` components to wrap jsx components, like this:
+Basic @fluent/react makes use of `Localized` components to wrap jsx components, like this:
 
 ```jsx
 export function NotAuthorized() {
@@ -45,7 +45,7 @@ elements already wrapped in `Localized` with their typical `attrs` enabled in th
 `Loc` component. This turns the above into:
 
 ```jsx
-import {Loc} from 'fluent-react-components';
+import {Loc} from '@doctype/fluent-react-components';
 
 export function NotAuthorized() {
   return (
@@ -127,7 +127,7 @@ component, for example.
 </Localized>
 ```
 
-You can make use of two helpers from fluent-react-utils to quickly wrap a
+You can make use of two helpers from @doctype/fluent-react-utils to quickly wrap a
 component in `Localized` and / or add it to the `Loc` object.
 
 ### `makeLocalizedElement(Element[, attrs])`
@@ -147,7 +147,7 @@ see information about the `.l10nrc` file).
 
 ```js
 // my-utils
-import {augmentLoc} from 'fluent-react-components';
+import {augmentLoc} from '@doctype/fluent-react-components';
 
 const customElements = {
   MyButton: MyLocalizedButton
