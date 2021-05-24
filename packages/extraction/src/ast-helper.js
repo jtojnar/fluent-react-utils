@@ -1,8 +1,16 @@
-import { STANDARD_ELEMENT_TYPES } from '@doctype/fluent-react-components';
 import { getProp, elementType as _elementType, hasProp } from 'jsx-ast-utils';
 import { AST_NODE_TYPES, FLUENT_ATTRS } from './constants';
 import { defaultShorthandName } from './defaults';
 import { formatRule, pullLocalizedDOMAttributes, formatMessage } from './format-helper';
+
+const { STANDARD_ELEMENT_TYPES = [] } = (() => {
+  try {
+    // eslint-disable-next-line global-require
+    return require('@doctype/fluent-react-components');
+  } catch {
+    return {};
+  }
+})();
 
 const {
   JSXElement,
