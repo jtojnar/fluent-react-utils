@@ -1,4 +1,3 @@
-import { STANDARD_ELEMENT_TYPES } from 'fluent-react-components';
 import { getProp, elementType as _elementType, hasProp } from 'jsx-ast-utils';
 import { AST_NODE_TYPES, FLUENT_ATTRS } from './constants';
 import { defaultShorthandName } from './defaults';
@@ -84,7 +83,7 @@ export function getAttributesList(node) {
 
 export function getAllowedAttrs(elementType, customElements = {}, messages) {
   const elemName = elementType.split('.')[1];
-  const elements = { ...STANDARD_ELEMENT_TYPES, ...customElements };
+  const elements = { ...customElements };
   const elementAttrs = elements[elemName];
   if (elementAttrs) {
     const attributeNames = Object.keys(elementAttrs);
