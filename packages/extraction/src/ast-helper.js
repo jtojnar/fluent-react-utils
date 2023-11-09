@@ -1,7 +1,7 @@
 import { getProp, elementType as _elementType, hasProp } from 'jsx-ast-utils';
-import { AST_NODE_TYPES, FLUENT_ATTRS } from './constants';
-import { defaultShorthandName } from './defaults';
-import { formatRule, pullLocalizedDOMAttributes, formatMessage } from './format-helper';
+import { AST_NODE_TYPES, FLUENT_ATTRS } from './constants.js';
+import { defaultShorthandName } from './defaults.js';
+import { formatRule, pullLocalizedDOMAttributes, formatMessage } from './format-helper.js';
 
 const {
   JSXElement,

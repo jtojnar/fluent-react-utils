@@ -8,7 +8,7 @@ import {
   defaultFilePattern,
   defaultShorthandName,
   getSourceStrings
-} from '.';
+} from './index.js';
 
 const DOCSTRING = 'Fluent React Utils';
 

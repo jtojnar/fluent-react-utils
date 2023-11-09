@@ -2,7 +2,7 @@ import fs from 'fs';
 import glob from 'glob';
 import { simple } from 'babylon-walk';
 import { parse } from '@babel/parser';
-import { compileFtlMessages } from './ast-helper';
+import { compileFtlMessages } from './ast-helper.js';
 
 export function parseForFtl(code, opts) {
   let ftlRules = '';
